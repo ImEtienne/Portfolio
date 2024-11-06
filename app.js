@@ -113,9 +113,6 @@ mainHead.addEventListener("click", () => {
 });
 
 
-
-
-
 /**
  *  form Validation
  */
@@ -144,7 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (validateInput()) {
       document.getElementById('loader').classList.remove('hidden');
       document.getElementById('sendButton').disabled = true;
-      
       let xhr = new XMLHttpRequest();
       xhr.open('POST', '/');
       xhr.setRequestHeader('content-type', 'application/json');
@@ -159,12 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
             backgroundColor: "green", // Couleur de fond de la notification
           }).showToast();
           
-          firstname.value = '';
-          username.value = '';
-          email.value = '';
-          phone.value = '';
-          object.value = '';
-          message.value = '';
+            resetForm();
           
         } else {
           Toastify({
@@ -176,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }).showToast();
         }
         document.getElementById('loader').classList.add('hidden');
-        document.getElementById('sendButton').disabled = false; // Réactiver le bouton
+        document.getElementById('sendButton').disabled = false; 
       };
       xhr.send(JSON.stringify(formData));
       } else {
@@ -187,9 +178,34 @@ document.addEventListener('DOMContentLoaded', function () {
             position: "center",
             backgroundColor: "red",
         }).showToast();
-      }
+    }
   });
 });
+
+// Fonction pour réinitialiser le formulaire
+const resetForm = () => {
+    // Réinitialise les valeurs des champs
+    firstname.value = '';
+    username.value = '';
+    email.value = '';
+    phone.value = '';
+    object.value = '';
+    message.value = '';
+
+    // Réinitialise les messages d'erreur et de validation
+    const errorDivs = document.querySelectorAll('.error');
+    errorDivs.forEach(div => {
+        div.innerHTML = ''; // Efface le contenu
+        div.style.display = 'none'; // Cache le div d'erreur
+    });
+
+    // Retire les classes d'erreur et de succès
+    const inputControls = document.querySelectorAll('.input-control');
+    inputControls.forEach(control => {
+        control.classList.remove('error');
+        control.classList.remove('succes');
+    });
+}
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;

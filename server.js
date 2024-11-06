@@ -6,9 +6,10 @@ var port = process.env.PORT || 3000;
 var http = require('http');
 var path = require('path');
 
+
 //crée une application express 
 var app = express();
-var server = http.Server(app);
+var server = http.createServer(app);
 app.set("port", port);
 
 // Middleware pour parser le corps des requêtes en JSON
