@@ -34,7 +34,7 @@
             </div>
             <!--NAV MENU-->
             <div class="nav-header">
-                <nav>
+                <nav class="nav-bar">
                     <ul>
                         <li class="menu_item"><a href="#introduction" class="nav__link active">accueil</a></li>
                         <li class="menu_item"><a href="#presentation" class="nav__link">a propos</a></li>
@@ -45,9 +45,12 @@
                         <li class="menu_item"><a href="#contact" class="nav__link">contact</a></li>
                     </ul>
                 </nav>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
-            <ion-icon name="menu-outline" class="toggle_icon"></ion-icon>
-            <ion-icon name="close-outline" class="close_icon"></ion-icon>
         </div>
     </header>
     <!--end header-->
@@ -474,6 +477,21 @@
                 </div>
                 <!--container contact-->
                 <div class="container-contact">
+                     <!-- Coordinate -->
+                    <div class="coordinate">
+                        <div class="coodinate-mail">
+                            <i class="fa-regular fa-envelope"></i>
+                            <p>etiennekibonganiwork@gmail.com</p>
+                        </div>
+                        <div class="coodinate-phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <p>06.52.78.13.75</p>
+                        </div>
+                        <div class="coodinate-address">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>75000 | Paris | France</p>
+                        </div>
+                    </div>
                     <!--Card form-->
                     <div class="card-form">
                         <form action="/send_email" method="POST" id="form">
@@ -509,22 +527,6 @@
                                 <div id="loader" class="loader hidden"></div>
                             </button>
                         </form>
-                    </div>
-                    <!--Coordinate-->
-                    <!-- Coordinate -->
-                    <div class="coordinate">
-                        <div class="coodinate-mail">
-                            <i class="fa-regular fa-envelope"></i>
-                            <p>etiennekibonganiwork@gmail.com</p>
-                        </div>
-                        <div class="coodinate-phone">
-                            <i class="fa-solid fa-phone"></i>
-                            <p>06.52.78.13.75</p>
-                        </div>
-                        <div class="coodinate-address">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>75000 | Paris | France</p>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -7,6 +7,15 @@ const year = document.getElementById('year');
 const date = new Date();
 year.innerHTML = date.getFullYear();
 
+/*Btn toogle screen mobile */
+
+const hamburger = document.querySelector(".hamburger");
+
+hamburger.addEventListener("click", () => {
+  const navBar = document.querySelector(".nav-bar");
+  navBar.classList.toggle("active");
+});
+
 /* 2 btn introduction */
 const btns = document.querySelectorAll(".btn");
 
@@ -31,11 +40,11 @@ window.onscroll = () => {
 
   // Parcours des sections
   document.querySelectorAll('section').forEach(section => {
-    const sectionTop = section.offsetTop - 60; // ajuste la position en fonction de la hauteur du header
+    const sectionTop = section.offsetTop - 60; 
     
     // Vérifie si une autre section est dans la vue
     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + section.offsetHeight) {
-      isHome = false; // Si une autre section est dans la vue, ce n'est pas la page d'accueil
+      isHome = false; 
     }
   });
 
@@ -43,7 +52,7 @@ window.onscroll = () => {
   navLinks.forEach(link => {
     const sectionId = link.getAttribute('href').substring(1); // Ignore le '#'
     const section = document.getElementById(sectionId);
-    const sectionTop = section.offsetTop - 60; // ajuste la position en fonction de la hauteur du header
+    const sectionTop = section.offsetTop - 60; 
 
     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + section.offsetHeight) {
       // Ajoute la classe active au lien correspondant à la section visible
@@ -97,7 +106,7 @@ const mainHead = document.querySelector('.main-head');
 window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
-  if (window.scrollY > 100) { // Remplace 100 par le nombre de pixels où tu veux que le header devienne fixe
+  if (window.scrollY > 100) { 
     mainHead.classList.add('fixed-header');
   } else {
     mainHead.classList.remove('fixed-header');
