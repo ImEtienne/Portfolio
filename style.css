@@ -1040,7 +1040,7 @@ header.active{
     bottom: -10px;
 }
 
-.nous-contacter p {
+.nous-contacter p.text-p {
   font-size: 0.8rem;
   text-align: center;
   padding: 45px 0;
@@ -1051,7 +1051,7 @@ header.active{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
     position: relative;
     width: 100%;
 
@@ -1064,7 +1064,7 @@ header.active{
   background-color: #fff;
   padding: 50px;
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .card-form input,
@@ -1169,6 +1169,60 @@ header.active{
 .input-control textarea:focus + .error {
     display: none; /* Cacher les messages d'erreur lorsque le champ est en focus (si nécessaire) */
 }
+
+/************************************
+*    right part "coordinate"        *
+*************************************/
+.coordinate {
+    display: flex; /* Utiliser flexbox pour disposer les éléments en colonne */
+    flex-direction: column; /* Disposer les éléments en colonne */
+    align-items: flex-start; /* Alignement à gauche */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+.coodinate-mail,
+.coodinate-phone,
+.coodinate-address {
+    display: flex; /* Utiliser flex pour aligner l'icône et le texte */
+    align-items: center; /* Aligner les éléments au centre */
+    padding: 25px 40px; /* Espacement intérieur */
+    background-color: rgba(255, 255, 255, 0.1); /* Fond léger pour séparer les sections */
+    width: 100%; /* Largeur de l'élément */
+    border-radius: 10px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Animation pour le fond lors du survol */
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.coodinate-mail:hover,
+.coodinate-phone:hover,
+.coodinate-address:hover {
+    background-color: rgba(237, 131, 108, 0.2); /* Changer le fond au survol */
+    cursor: pointer;
+}
+
+.coodinate-mail i,
+.coodinate-phone i,
+.coodinate-address i {
+    font-size: 30px; /* Taille de l'icône */
+    color: #ed836c; /* Couleur de l'icône */
+    margin-right: 15px; /* Espacement à droite de l'icône */
+}
+
+.coodinate-mail h4,
+.coodinate-phone h4,
+.coodinate-address h4 {
+    margin: 0; /* Supprimer la marge par défaut */
+    font-size: 1.2em; /* Taille du texte du titre */
+    color: #333; /* Couleur du texte du titre */
+}
+
+.coodinate-mail p,
+.coodinate-phone p,
+.coodinate-address p {
+    font-size: 13px; /* Taille du texte du paragraphe */
+    color: #555; /* Couleur du texte du paragraphe */
+}
+
 
 /*************************************
 *      Footer                        *
