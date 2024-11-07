@@ -1360,7 +1360,7 @@ footer p{
 
   /* Contact*/
   .container-contact{
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
