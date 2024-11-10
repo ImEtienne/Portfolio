@@ -585,7 +585,7 @@ header.active{
     width: 50%;
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 2rem rgba(131, 129, 129, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     z-index:99;
 }
 
@@ -849,7 +849,7 @@ header.active{
     width: 50%;
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 0 2rem rgba(131, 129, 129, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;    
     z-index:99;
 }
 
