@@ -29,6 +29,7 @@ html{
     height: 100%;
     overflow: auto;
     scroll-behavior: smooth;
+    font-size: 1rem;
 }
 
 :root{
@@ -610,6 +611,7 @@ header.active{
     font-size: 1em;
     letter-spacing: 0.5px;
     line-height: 1.3;
+    width: max-content;
 }
 
 .container #education .container-education .timeline-container:nth-child(ODD) .checkpoint{
@@ -694,6 +696,9 @@ header.active{
 .skill-box{
     padding: 1rem;
     cursor: pointer;
+}
+.skill-box p{
+    font-size: 1.1rem
 }
 
 .skill-box:hover > .skill-title::after,
@@ -870,6 +875,7 @@ header.active{
     font-size: 1em;
     letter-spacing: 0.5px;
     line-height: 1.3;
+    width: max-content;
 }
 
 .container #experience .experience-container .timeline-container:nth-child(ODD) .checkpoint{
@@ -883,7 +889,7 @@ header.active{
 }
 
 .text-container p{
-    color: #9b9b9b;
+    color: #767474;
     font-size: 0.9rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -891,6 +897,47 @@ header.active{
     overflow: hidden;
     text-transform: ellipsis;
     margin: 20px 0;
+}
+
+
+/* NV Style*/
+.schedule {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligne le contenu aux extrémités */
+}
+
+.schedule p {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.info{
+    margin-top: 15px;
+}
+
+.schedule i {
+    margin-right: 15px; /* Marge uniforme pour toutes les icônes */
+    width: 20px; /* Largeur fixe pour aligner parfaitement les icônes */
+    text-align: center; /* Centre l'icôn*/
+}
+
+.schedule .logo {
+    max-width: 80px; /* Taille de l'image */
+    height: auto;
+}
+
+.schedule p:nth-child(1) i {
+    color: #3b3b3b; /* couleur de l’icône pour l'entreprise */
+}
+
+.schedule p:nth-child(2) i {
+    color: #5f9ea0; /* couleur de l’icône pour la localisation */
+}
+
+.schedule p:nth-child(3) i {
+    color: #6a5acd; /* couleur de l’icône pour la date */
 }
 
 /****************************************
@@ -1205,16 +1252,26 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #f5f5f5;
-  height: 70px;
-  line-height: 70px;
-  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  height: auto;
+  padding: 20px;
 }
 
-footer p{
-    font-size: 0.9rem;
-    color: #121C42;
+.footer-container ul li{
     text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
+
+.footer-container ul li a{
+    color: #121C42;
+}
+
+.footer-container ul li a:hover {
+    color: #ed836c;
+}
+
+
+
 
 /**********************
 *   SCROLL btn        *
@@ -1356,6 +1413,10 @@ footer p{
   /* presentation*/
   .container #presentation .container{
     flex-direction: column;
+  }
+  /* Skill*/
+  .skill-box p{
+    display: none;
   }
 
   /* Contact*/
