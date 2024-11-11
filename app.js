@@ -330,3 +330,149 @@ const validateInput = () => {
   }
   return isValid;
 };
+
+/**
+ *  animation
+ */
+const sr = ScrollReveal({
+  distance: '50px',
+  reset: false
+});
+
+sr.reveal('.banner-left', {
+  duration: 2000,
+  origin: 'left'
+})
+
+sr.reveal('.banner-right', {
+  duration: 4000,
+  origin: 'right'
+});
+
+sr.reveal('.main-head', {
+  duration: 2000,
+  origin: 'bottom'
+})
+
+sr.reveal('.scroll', {
+  duration: 4000,
+  origin: 'bottom'
+})
+
+/*************************************
+ * all social media except contact   *
+ *************************************/
+sr.reveal('.social-media', {
+  duration: 4000,
+  origin: 'left'
+})
+
+/**************************
+ * presentation or about  *
+ **************************/
+sr.reveal('.title-about', {
+  durantion: 2000,
+  origin: 'bottom'
+})
+
+sr.reveal('.content-about', {
+  durantion: 5000,
+  delay: 600,
+  origin: 'bottom',
+})
+
+sr.reveal('.image-about', {
+  durantion: 5000,
+  delay: 600,
+  origin: 'left'
+})
+
+/**********************
+ *    EDUCATION       *
+ **********************/
+sr.reveal('.title-education', {
+  durantion: 2000,
+  delay: 300,
+  origin: 'bottom'
+})
+
+sr.reveal('.timeline-container', {
+  durantion: 5000,
+  delay: 600,
+  origin: 'bottom',
+})
+
+/********************
+ *      SKILL       *
+ ********************/
+sr.reveal('.title-skill', {
+  durantion: 2000,
+  delay: 300,
+  origin: 'bottom'
+})
+
+sr.reveal('.skill-box', {
+  durantion: 2000,
+  delay: 400,
+  origin: 'bottom'
+})
+
+/************************
+ *   Exeperience pro    *
+ ***********************/
+sr.reveal('.title-experience', {
+  durantion: 2000,
+  delay: 300,
+  origin: 'bottom'
+})
+
+sr.reveal('.timeline-container', {
+  durantion: 5000,
+  delay: 600,
+  origin: 'bottom',
+})
+
+
+/************************
+ *      Portfolio       *
+ ************************/
+sr.reveal('.title-portfolio', {
+  durantion: 2000,
+  origin: 'bottom'
+})
+
+sr.reveal('.project-box', {
+  durantion: 5000,
+  delay: 600,
+  origin: 'bottom',
+}, 200)
+
+/********************
+ *     Contact      *
+ ********************/
+sr.reveal('.title-contact', {
+  durantion: 2000,
+  delay: 300,
+  origin: 'bottom'
+})
+
+sr.reveal('.card-form', {
+  durantion: 4000,
+  origin: 'left',
+})
+
+sr.reveal('.coordinate', {
+  durantion: 8000,
+  delay: 500,
+  origin: 'right',
+})
+
+
+
+
+
+//ScrollReveal().reveal('.main-head', { delay: 600, duration: 600});
+//ScrollReveal().reveal('.introduction', { delay: 800, duration: 800});
+
+
+

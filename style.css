@@ -282,7 +282,7 @@ header.active{
     }
 }
 
-.container #introduction .banner-left h1{
+.container #introduction .banner-left h2{
     color: #121C42;
     text-transform: capitalize;
     font-family: "Roboto", sans-serif;
@@ -291,7 +291,7 @@ header.active{
     line-height: 1.3;
 }
 
-.container #introduction .banner-left h2{
+.container #introduction .banner-left h3{
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
@@ -480,6 +480,9 @@ header.active{
     top: 68%;
     left: 1%;
     font-size: 15px;
+ }
+
+ .social-media a{
     color: #6B7688;
  }
 
@@ -633,6 +636,11 @@ header.active{
     overflow: hidden;
     text-transform: ellipsis;
     margin: 20px 0;
+}
+
+.crochets p > span{
+    font-weight: 700;
+    font-style: italic;
 }
 
 /**************************************
@@ -1164,8 +1172,8 @@ header.active{
   height: 20px;
   animation: spin 2s linear infinite;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 70px;
+  bottom: 61px;
 }
 
 .hidden {
@@ -1202,46 +1210,49 @@ header.active{
 
 .coodinate-mail,
 .coodinate-phone,
-.coodinate-address {
-    display: flex; /* Utiliser flex pour aligner l'icône et le texte */
-    align-items: center; /* Aligner les éléments au centre */
-    padding: 25px 40px; /* Espacement intérieur */
-    background-color: rgba(255, 255, 255, 0.1); /* Fond léger pour séparer les sections */
-    width: 100%; /* Largeur de l'élément */
-    border-radius: 10px; /* Coins arrondis */
-    transition: background-color 0.3s ease; /* Animation pour le fond lors du survol */
+.coodinate-address, 
+.coodinate-links{
+    display: flex;
+    align-items: center; 
+    padding: 25px 40px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    width: 100%; 
+    border-radius: 10px; 
+    transition: background-color 0.3s ease; 
     box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .coodinate-mail:hover,
 .coodinate-phone:hover,
-.coodinate-address:hover {
-    background-color: rgba(237, 131, 108, 0.2); /* Changer le fond au survol */
+.coodinate-address:hover,
+.coodinate-links:hover {
+    background-color: rgba(237, 131, 108, 0.2); 
     cursor: pointer;
 }
 
 .coodinate-mail i,
 .coodinate-phone i,
-.coodinate-address i {
-    font-size: 30px; /* Taille de l'icône */
-    color: #ed836c; /* Couleur de l'icône */
-    margin-right: 15px; /* Espacement à droite de l'icône */
+.coodinate-address i,
+.coodinate-links i{
+    font-size: 35px; 
+    color: #ed836c; 
+    margin-right: 15px; 
+}
+.coodinate-links i{
+    text-align: center;
 }
 
-.coodinate-mail h4,
-.coodinate-phone h4,
-.coodinate-address h4 {
-    margin: 0; /* Supprimer la marge par défaut */
-    font-size: 1.2em; /* Taille du texte du titre */
-    color: #333; /* Couleur du texte du titre */
+.coodinate-links a{
+    margin:10px auto;
 }
 
 .coodinate-mail p,
 .coodinate-phone p,
 .coodinate-address p {
-    font-size: 13px; /* Taille du texte du paragraphe */
-    color: #555; /* Couleur du texte du paragraphe */
+    font-size: 13px; 
+    color: #555; 
 }
+
 
 
 /*************************************
@@ -1336,6 +1347,12 @@ footer {
     width: 50px;
 }
 
+/******************************
+*          ANIMATION          *                  
+*******************************/
+
+
+
 /***********************************
 *    Responsive design             *
 ************************************/
@@ -1353,8 +1370,6 @@ footer {
     background: black;
     margin: 6px 0;
   }
-
-
    .nav-bar {
     height: 0px;
     position: absolute;
