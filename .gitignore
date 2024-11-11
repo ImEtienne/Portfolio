@@ -1,2 +1,3 @@
-.vscode
-.metals
+# ignorer tous les fichiers avec (.)
+*.vscode
+*.metals
