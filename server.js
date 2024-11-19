@@ -11,12 +11,15 @@ var path = require('path');
 var app = express();
 var server = http.createServer(app);
 app.set("port", port);
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 // Middleware pour parser le corps des requêtes en JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "/index.html")));
 app.use(express.static(path.join(__dirname)));
+app.use(express.static('public'));
 
 // Configurer la connexion à la base de données
 const pool = mysql.createPool({
@@ -31,7 +34,8 @@ const pool = mysql.createPool({
 // Routing
 // Endpoint pour traiter les soumissions de formulaire
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "/index.html"))
+    //res.sendFile(path.join(__dirname, "/index.html"))
+    res.render('index', {title: 'test'})
 })
 
 app.post("/", function (req, res) {
