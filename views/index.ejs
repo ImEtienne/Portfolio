@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <title>Etienne KIBONGANI LOMBO - Portfolio | Ingénieur Informatique en Formation</title>
 </head>
 <body>
@@ -58,46 +58,8 @@
             </section>
 
             <!--ABOUT-->
-            <section id="presentation">
-                <!--title about-->
-                <div class="title-about">
-                    <h2>qui suis-je</h2>
-                </div>
-                <!--container aboout-->
-                <div class="container">
-                    <div class="image-about">
-                        <img src="Assets/Etienne-Kibongani.jpg" alt="image of Etienne KIBONGANI LOMBO">
-                    </div>
-                    <div class="content-about">
-                        <p>
-                            Hello👋, je suis Etienne Kibongani Lombo 😉, développeur Full Stack et c'est ici que je vous parle de mon parcours.
-                        </p><br>
-                        <p>
-                            Passionné par le développement logiciel, j'ai acquis, au fil de ma formation et mes expériences professionnelles, les compétences nécessaires pour être
-                            autonome et relever les défis techniques.
-                        </p><br>
-                        <p>
-                            Je suis actuellement en quête d'une opportunité d'alternance dans le domaine du développement logiciel, pour une durée de 12 à 24 mois, à compter de novembre 2024.
-                        </p><br>
-                        <p>
-                            J'aspire à intégrer une équipe ambitieuse, avec pour objectif de concevoir et de livrer des solutions applicatives web adaptées aux besoins des utilisateurs.
-                        </p><br>
-                        <p>
-                            Animé par une passion précoce pour l'informatique 💻, j'ai toujours nourri le désir d'appréhender les mécanismes qui se dissimulent derrière l'ordinateur. Guidé par cet intérêt, j'ai trouvé ma vocation dans le domaine du développement logiciel en apportant mon concours à résoudre diverses problématiques liées aux artefacts numériques.
-                        </p><br>
-                        <p>
-                            J'ai acquis une expertise approfondie dans divers langages de programmation, notamment : Java/Android, Python, JavaScript, PHP, Ocaml, C, Scala, Ruby, Lua et TypeScript. 
-                        </p><br>
-                        <p>
-                            Je vous souhaite la bienvenue et espère que vous passerez un agréable séjour dans mon monde 😉.
-                        </p>
-                        <a href="#contact">conctatez-moi&nbsp;<i class="fa-regular fa-envelope"></i></a>
-                    </div>
-                </div>
-
-                <!--social media-->
-                <%- include('partials/social-media') %>
-            </section>
+            <%- include('about') %>
+            <!--END ABOUT-->
 
             <!--EDUCATION-->
             <section id="education">
@@ -347,194 +309,24 @@
             </section>
 
             <!--PORTFOLIO-->
-            <section id="portfolio">
-                <div class="title-portfolio">
-                    <h2>portfolio</h2>
-                    <p>Ci-dessous, quelques exemples de réalisations effectuées durant ma formation, le stage et plus encore : </p>
-                </div>
-                <div class="container-portfolio">
-                    <!-- portfolio box-1-->
-                    <div class="project-box">
-                        <!--title project 1-->
-                        <div class="project-title">
-                            <!--project image-->
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/site-restaurant-xyz.png" alt="image site restaurant" class="img-portfolio">
-                            </div>
-                            <!--Overlay-->
-                            <div class="overlay">
-                                <a href="https://github.com/ImEtienne/restaurant-table-reservation" target="_blank"><h4>Restaurant xyz</h4></a>
-                            </div>
-                            <!--<h3>project web - restaurant-xyz</h3>-->
-                        </div>    
-                    </div>
-                    <!--end box-1-->
-
-                    <!-- portfolio box-2-->
-                    <div class="project-box">
-                        <!--title project 2-->
-                        <div class="project-title">
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/portfolio-v1.png" alt="image portfolio v1" class="img-portfolio">
-                            </div>
-                             <!--Overlay-->
-                            <div class="overlay">
-                                <h4>portfolio v1</h4>
-                            </div>
-                            <!--<h3>portfolio v1</h3>-->
-                        </div>   
-                    </div>
-                    <!--end box-2-->
-
-                    <!-- portfolio box-3-->
-                    <div class="project-box">
-                        <!--title project 3-->
-                        <div class="project-title">
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/pacman.png" alt="image jeu pacman" class="img-portfolio">
-                            </div>
-                             <!--Overlay-->
-                            <div class="overlay">
-                                <a href="https://github.com/ImEtienne/pacman" target="_blank"><h4>Pacman</h4></a>
-                            </div>
-                            <!--<h3>Pacman</h3>-->
-                        </div>    
-                    </div>
-                    <!--end box-3-->
-
-                    <!-- portfolio box-4-->
-                    <div class="project-box">
-                        <!--title project 4-->
-                        <div class="project-title">
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/Gestion-de-planning.png" alt="image gestion de planning" class="img-portfolio">
-                            </div>
-                             <!--Overlay-->
-                            <div class="overlay">
-                                <a href="https://github.com/ImEtienne/Conception-site--Gestion-Planning" target="_blank"><h4>Gestion de Planning</h4></a>
-                            </div>
-                            <!--<h3>Gestion de Planning</h3>-->
-                        </div>    
-                    </div>
-                    <!--end box-4-->
-
-                    <!-- portfolio box-5-->
-                    <div class="project-box">
-                        <!--title project 5-->
-                        <div class="project-title">
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/falling_snake.png" alt="image falling snake" class="img-portfolio">
-                            </div>
-                             <!--Overlay-->
-                            <div class="overlay">
-                                <a href="https://github.com/ImEtienne/FallingSnake" target="_blank"><h4>Falling Snake</h4></a>
-                            </div>
-                            <!--<h3>Falling Snake</h3>-->
-                        </div>  
-                    </div>
-                    <!--end box-5-->
-
-                    <!-- portfolio box-6-->
-                    <div class="project-box">
-                        <!--title project 6-->
-                        <div class="project-title">
-                            <div class="project-img">
-                                <img src="Assets/img-portfolio/concours-chat.png" alt="image site concours chat" class="img-portfolio">
-                            </div>
-                             <!--Overlay-->
-                            <div class="overlay">
-                                <h4>Concours chat</h4>
-                            </div>
-                           <!--<h3>Concours chat</h3>-->
-                        </div>    
-                    </div>
-                    <!--end box-6-->
-                </div>
-            </section>
-
+            <%- include('projects') %>
+            <!--END PORTFOLIO-->
+            
             <!--MOTIVATION-->
             <!--<section id="motivation" class="display: none"></section>-->
 
             <!--CONTACT-->
-            <section id="contact" class="nous-contacter">
-                <!--title contact-->
-                <div class="title-contact">
-                    <h2>contact</h2>
-                    <p class="text-p">N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.</p>
-                </div>
-                <!--container contact-->
-                <div class="container-contact">
-                    <!--Card form-->
-                    <div class="card-form">
-                        <form action="/send_email" method="POST" id="form">
-                            <div class="box-name">
-                                 <div class="input-control">
-                                    <input type="text" id="firstname" name="firstname" placeholder="Votre prénom">
-                                    <div class="error"></div>
-                                </div>
-                                <div class="input-control">
-                                    <input type="text" id="username" name="username" placeholder="Votre nom">
-                                    <div class="error"></div>
-                                </div>
-                            </div>
-                           
-                            <div class="input-control">
-                                <input type="email" id="email" name="email" placeholder="Adresse E-mail">
-                                <div class="error"></div>
-                            </div>
-                            <div class="input-control">
-                                <input type="tel" id="phone" name="phone" placeholder="Téléphone">
-                                <div class="error"></div>
-                            </div>
-                            <div class="input-control">
-                                <input type="text" id="object" name="object" placeholder="Objet">
-                                <div class="error"></div>
-                            </div>
-                            <div class="input-control">
-                                <textarea id="message" name="message" placeholder="Votre message"></textarea>
-                                <div class="error"></div>
-                            </div>
-                            <button type="submit" value="Send" id="sendButton">
-                                Envoyer 
-                            </button>
-                            <div id="loader" class="loader hidden"></div>
-
-                        </form>
-                    </div>
-                    <!-- Coordinate -->
-                    <div class="coordinate">
-                        <div class="coodinate-mail">
-                            <i class="fa-regular fa-envelope"></i>
-                            <p>etiennekibonganiwork@gmail.com</p>
-                        </div>
-                        <div class="coodinate-phone">
-                            <i class="fa-solid fa-phone"></i>
-                            <p>06.52.78.13.75</p>
-                        </div>
-                        <div class="coodinate-address">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p>75000 | Paris | France</p>
-                        </div>
-                        <div class="coodinate-links">
-                            <a href="https://github.com/ImEtienne" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/etienne-kibongani-lombo/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-codepen"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <%- include('contact') %>
             <!--End contact-->
         </div>
     </main>
     <!--Footer-->
      <%- include('partials/footer') %>
     <!--btn top-->
-    <div class="bton">
-      <img src="Assets/arrow-up-solid.svg"  alt="bouton haut" class="icone">
-    </div>
+    <%- include('partials/btn-up') %>
     <!--end btn top-->
     <!-- app Js -->
-    <script src="app.js"></script>
+    <script src="../public/js/app.js"></script>
     <!-- ionIcons-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

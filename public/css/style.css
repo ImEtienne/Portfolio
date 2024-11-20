@@ -1304,15 +1304,14 @@ footer {
 }*/
 
 .bton {
-  background-color:#f05f40;
+  background-color:#e66e53;
   border-radius: 50%;
-  cursor: pointer;
   height: 50px;
   width: 50px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   position: fixed;
   bottom: -60px; 
   right: 20px;
@@ -1328,7 +1327,6 @@ footer {
 .icone {
   width: 20px;
 }
-
 
 /*****************************
 *   bar scroll               *

@@ -1,0 +1,67 @@
+<section id="contact" class="nous-contacter">
+    <!--title contact-->
+    <div class="title-contact">
+        <h2>contact</h2>
+        <p class="text-p">N'hésitez pas à me contacter, je vous répondrai dans les plus brefs délais.</p>
+    </div>
+    <!--container contact-->
+    <div class="container-contact">
+        <!--Card form-->
+        <div class="card-form">
+            <form action="/send_email" method="POST" id="form">
+                <div class="box-name">
+                        <div class="input-control">
+                        <input type="text" id="firstname" name="firstname" placeholder="Votre prénom">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <input type="text" id="username" name="username" placeholder="Votre nom">
+                        <div class="error"></div>
+                    </div>
+                </div>
+                
+                <div class="input-control">
+                    <input type="email" id="email" name="email" placeholder="Adresse E-mail">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="tel" id="phone" name="phone" placeholder="Téléphone">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input type="text" id="object" name="object" placeholder="Objet">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <textarea id="message" name="message" placeholder="Votre message"></textarea>
+                    <div class="error"></div>
+                </div>
+                <button type="submit" value="Send" id="sendButton">
+                    Envoyer 
+                </button>
+                <div id="loader" class="loader hidden"></div>
+
+            </form>
+        </div>
+        <!-- Coordinate -->
+        <div class="coordinate">
+            <div class="coodinate-mail">
+                <i class="fa-regular fa-envelope"></i>
+                <p>etiennekibonganiwork@gmail.com</p>
+            </div>
+            <div class="coodinate-phone">
+                <i class="fa-solid fa-phone"></i>
+                <p>06.52.78.13.75</p>
+            </div>
+            <div class="coodinate-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>75000 | Paris | France</p>
+            </div>
+            <div class="coodinate-links">
+                <a href="https://github.com/ImEtienne" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/etienne-kibongani-lombo/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-codepen"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
