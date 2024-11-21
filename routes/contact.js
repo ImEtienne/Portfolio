@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { addMessage } = require('../controllers/contactController');
-const { validateForm } = require('../utils/validation'); // Validation
-const { sendEmail } = require('../utils/email');         // Envoi d'email
+const { validateForm } = require('../utils/validation'); 
+const { sendEmail } = require('../utils/email');         
 
 // Route pour gérer le formulaire de contact
 router.post('/', async (req, res) => {
@@ -25,8 +25,8 @@ router.post('/', async (req, res) => {
             // Envoi de l'email après l'insertion dans la base
             try {
                 await sendEmail(data);
-                console.log('Email envoyé avec succès');
-                return res.status(200).json({ success: true, message: 'Message enregistré et email envoyé avec succès !' });
+                console.log('Email envoyé avec succès !');
+                return res.status(200).send('success')
             } catch (emailError) {
                 console.error('Erreur lors de l\'envoi de l\'email:', emailError);
                 return res.status(500).send('Message enregistré, mais l\'email n\'a pas pu être envoyé.');
