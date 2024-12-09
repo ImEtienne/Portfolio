@@ -150,43 +150,68 @@ document.addEventListener('DOMContentLoaded', function () {
     if (validateInput()) {
       document.getElementById('loader').classList.remove('hidden');
       document.getElementById('sendButton').disabled = true;
+      document.getElementById('btn-text').classList.add('hidden');
       let xhr = new XMLHttpRequest();
       xhr.open('POST', '/');
       xhr.setRequestHeader('content-type', 'application/json');
       xhr.onload = function () {
         console.log(xhr.responseText);
-        if (xhr.responseText == 'success') {
+        if (xhr.responseText.trim() === 'success') {
           Toastify({
             text: "Message envoyé avec succès",
-            duration: 3000, // Durée en millisecondes
-            gravity: "top", // Position de la notification (top, bottom)
-            position: "center", // Alignement de la notification (left, center, right)
-            backgroundColor: "green", // Couleur de fond de la notification
+            duration: 3500, 
+            gravity: "top", 
+            position: "right", 
+            offset: {
+                x: 10, 
+                y: 60, 
+            },
+            backgroundColor: "green", 
+            style: {
+              fontSize: "13px", 
+              padding: "12px", 
+            },
           }).showToast();
-          
             resetForm();
-          
         } else {
           Toastify({
             text: "Erreur lors de l'envoi du message",
-            duration: 3000,
+            duration: 3500,
             gravity: "top",
-            position: "center",
+            position: "right",
+             offset: {
+                x: 10, 
+                y: 60, 
+            },
             backgroundColor: "red",
+            style: {
+              fontSize: "13px", 
+              padding: "12px", 
+            },
           }).showToast();
         }
         document.getElementById('loader').classList.add('hidden');
         document.getElementById('sendButton').disabled = false; 
+        document.getElementById('btn-text').classList.remove('hidden');
+
       };
       xhr.send(JSON.stringify(formData));
       } else {
         Toastify({
-            text: "Veuillez remplir tous les champs avant d'envoyer le message",
-            duration: 3000,
-            gravity: "top",
-            position: "center",
-            backgroundColor: "red",
-        }).showToast();
+          text: "Veuillez remplir tous les champs avant d'envoyer le message",
+          duration: 3500,
+          gravity: "top", // Position verticale (top, bottom)
+          position: "right", // Alignement horizontal (left, center, right)
+          offset: {
+            x: 10, // Décalage en pixels depuis la bordure droite
+            y: 60, // Décalage en pixels depuis la bordure inférieure
+          },
+          backgroundColor: "orange",
+          style: {
+            fontSize: "13px", // Réduction de la taille du texte
+            padding: "12px", // Optionnel : ajuster le padding si nécessaire
+          },
+      }).showToast();
     }
   });
 });
