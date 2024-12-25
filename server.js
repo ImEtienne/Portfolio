@@ -7,6 +7,7 @@ const path = require('path');
 const hostname = process.env.HOSTNAME || localhost;
 const indexRoutes = require('./routes/index');
 const contactRoutes = require('./routes/contact'); 
+const projectsRoutes = require('./routes/projects');
 
 // Configuration
 const app = express();
@@ -24,6 +25,7 @@ app.use(express.static('public'));
 // Routes
 app.use('/', indexRoutes);
 app.use('/', contactRoutes);
+app.use('/', projectsRoutes);
 
 // Lancement du serveur
 server.listen(port, hostname, () => {
