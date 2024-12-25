@@ -1,3 +1,4 @@
+'use strict'
 const mysql = require('mysql2/promise');
 
 // Configurer la connexion à la base de données
