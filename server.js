@@ -4,6 +4,7 @@ const express = require('express');
 const port = process.env.PORT; 
 const http = require('http');
 const path = require('path');
+const hostname = process.env.HOSTNAME || localhost;
 const indexRoutes = require('./routes/index');
 const contactRoutes = require('./routes/contact'); 
 
@@ -25,6 +26,6 @@ app.use('/', indexRoutes);
 app.use('/', contactRoutes);
 
 // Lancement du serveur
-server.listen(port, () => {
-    console.log(`Serveur démarré sur http://localhost:${port}`);
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
 });
