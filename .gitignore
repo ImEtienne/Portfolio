@@ -1,5 +1,5 @@
 # ignorer tous les fichiers avec (.)
-*.vscode
-*.metals
-.env
+.vscode/
+.metals/
+.env*
 node_modules/
