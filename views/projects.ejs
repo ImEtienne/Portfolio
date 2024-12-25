@@ -7,115 +7,30 @@
   <!--End Title portfolio-->
   <!--Container portfolio-->
   <div class="container-portfolio">
-    <!-- portfolio box-1-->
-    <div class="project-box">
-      <!--title project 1-->
-      <div class="project-title">
-        <!--project image-->
-        <div class="project-img">
-          <img src="Assets/img-portfolio/site-restaurant-xyz.png" alt="image site restaurant" class="img-portfolio">
+  <% if (portfolioItems && portfolioItems.length) { %>
+    <% portfolioItems.forEach(item => { %>
+      <!-- portfolio box-1-->
+      <div class="project-box">
+        <!--title project 1-->
+        <div class="project-title">
+          <!--project image-->
+          <div class="project-img">
+            <!--<img src="Assets/img-portfolio/site-restaurant-xyz.png" alt="image site restaurant" class="img-portfolio"> -->
+            <img src="<%= item.imgSrc %>"  alt="<%= item.altText %>" class="img-portfolio">
+          </div>
+          <!--Overlay-->
+          <div class="overlay">
+            <!--<a href="https://github.com/ImEtienne/restaurant-table-reservation" target="_blank">
+              <h4>Restaurant xyz</h4>
+            </a>-->
+            <a href="<%= item.link %>" target="_blank">
+                  <h4><%= item.title %></h4>
+            </a>
+          </div>
+          <!--<h3>project web - restaurant-xyz</h3>-->
         </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="https://github.com/ImEtienne/restaurant-table-reservation" target="_blank">
-            <h4>Restaurant xyz</h4>
-          </a>
-        </div>
-        <!--<h3>project web - restaurant-xyz</h3>-->
       </div>
-    </div>
-    <!--end box-1-->
-
-    <%#----
-    <!-- portfolio box-2-->
-    <div class="project-box">
-      <!--title project 2-->
-      <div class="project-title">
-        <div class="project-img">
-          <img src="Assets/img-portfolio/portfolio-v1.png" alt="image portfolio v1" class="img-portfolio">
-        </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="#" target="_blank">
-              <h4>portfolio v1</h4>
-          </a>
-        </div>
-        <!--<h3>portfolio v1</h3>-->
-      </div>
-    </div>
-    <!--end box-2-->
-
-    <!-- portfolio box-3-->
-    <div class="project-box">
-      <!--title project 3-->
-      <div class="project-title">
-        <div class="project-img">
-          <img src="Assets/img-portfolio/pacman.png" alt="image jeu pacman" class="img-portfolio">
-        </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="https://github.com/ImEtienne/pacman" target="_blank">
-            <h4>Pacman</h4>
-          </a>
-        </div>
-        <!--<h3>Pacman</h3>-->
-      </div>
-    </div>
-    <!--end box-3-->
-
-    <!-- portfolio box-4-->
-    <div class="project-box">
-      <!--title project 4-->
-      <div class="project-title">
-        <div class="project-img">
-          <img src="Assets/img-portfolio/Gestion-de-planning.png" alt="image gestion de planning" class="img-portfolio">
-        </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="https://github.com/ImEtienne/Conception-site--Gestion-Planning" target="_blank">
-            <h4>Gestion de Planning</h4>
-          </a>
-        </div>
-        <!--<h3>Gestion de Planning</h3>-->
-      </div>
-    </div>
-    <!--end box-4-->
-
-    <!-- portfolio box-5-->
-    <div class="project-box">
-      <!--title project 5-->
-      <div class="project-title">
-        <div class="project-img">
-          <img src="Assets/img-portfolio/falling_snake.png" alt="image falling snake" class="img-portfolio">
-        </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="https://github.com/ImEtienne/FallingSnake" target="_blank">
-            <h4>Falling Snake</h4>
-          </a>
-        </div>
-        <!--<h3>Falling Snake</h3>-->
-      </div>
-    </div>
-    <!--end box-5-->
-
-    <!-- portfolio box-6-->
-    <div class="project-box">
-      <!--title project 6-->
-      <div class="project-title">
-        <div class="project-img">
-          <img src="Assets/img-portfolio/concours-chat.png" alt="image site concours chat" class="img-portfolio">
-        </div>
-        <!--Overlay-->
-        <div class="overlay">
-          <a href="#" target="_blank">
-              <h4>Concours chat</h4>
-          </a>
-        </div>
-        <!--<h3>Concours chat</h3>-->
-      </div>
-    </div>
-    <!--end box-6-->
-    ------%>
+    <% }) %>
+  <% } %>
   </div>
 </section>

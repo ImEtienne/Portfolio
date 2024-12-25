@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(xhr.responseText);
         if (xhr.responseText.trim() === 'success') {
           Toastify({
-            text: "Message envoyé avec succès",
+            text: "Message envoyé",
             duration: 3500, 
             gravity: "top", 
             position: "right", 
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
       xhr.send(JSON.stringify(formData));
       } else {
         Toastify({
-          text: "Veuillez remplir tous les champs avant d'envoyer le message",
+          text: "Remplissez tous les champs !",
           duration: 3500,
           gravity: "top", // Position verticale (top, bottom)
           position: "right", // Alignement horizontal (left, center, right)
