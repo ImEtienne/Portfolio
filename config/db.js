@@ -4,11 +4,11 @@ const mysql = require('mysql2/promise');
 // Configurer la connexion à la base de données
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: '127.0.0.1',
-    user: 'root',
-    port: 3306,
-    password: '',
-    database: 'portfolio'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 pool.getConnection()
