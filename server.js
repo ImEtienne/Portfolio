@@ -26,6 +26,6 @@ app.use('/', indexRoutes);
 app.use('/', contactRoutes);
 
 // Lancement du serveur
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
 });
