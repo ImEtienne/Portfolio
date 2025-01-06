@@ -4,7 +4,6 @@ const express = require('express');
 const port = process.env.PORT; 
 const http = require('http');
 const path = require('path');
-const hostname = process.env.HOSTNAME || localhost;
 const indexRoutes = require('./routes/index');
 const contactRoutes = require('./routes/contact'); 
 
