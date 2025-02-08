@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Etienne Kibongani Lombo" />
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no, maximum-scale=1">
     <meta name="description" content="Étienne Kibongani Lombo, développeur full stack. Spécialisé en JavaScript, Python, Java, Angular, React et Laravel. Découvrez mes projets et contactez-moi pour des collaborations innovantes.">
-    <meta name="keywords" content="développeur full stack, développeur web, portfolio, Ruby, Java, Angular, Python, Laravel, Django, Étienne Kibongani Lombo, île-de-France, Paris, alternance">
+    <meta name="keywords" content="développeur full stack, développeur web, Etienne Kibongani portfolio, Etienne Kibongani Lombo portfolio, Ruby, Java, Angular, Python, Laravel, Django, Étienne Kibongani Lombo, île-de-France, Paris, alternance">
     <meta name="author" content="Étienne Kibongani Lombo">
+    <meta name="geo.placename" content="etiennekibongani.com">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
     <!-- Open Graph pour le partage sur les réseaux sociaux -->
     <meta property="og:title" content="Étienne Kibongani Lombo - Développeur Full Stack">
     <meta property="og:description" content="Explorez mes projets, compétences et expériences en développement logiciel. Disponible pour des opportunités passionnantes.">
@@ -23,7 +27,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="./../public/css/Hover-master/css/hover-min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <link rel="stylesheet" href="../public/css/style.css">
@@ -31,7 +34,7 @@
 
     <!-- app Js -->
     <script src="../public/js/app.js" defer></script>
-    <title>Etienne KIBONGANI LOMBO - Portfolio | Ingénieur Informatique en Formation</title>
+    <title>Etienne KIBONGANI LOMBO | Ingénieur Informatique en Formation</title>
 </head>
 <body>
     <!--Header-->
@@ -350,19 +353,5 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!--Toastify-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.2/toastify.min.js"></script>
-    <script>
-        /(trident|msie)/i.test(navigator.userAgent) && 
-        document.getElementById && 
-        window.addEventListener && 
-        window.addEventListener("hashchange", function() {
-            var element, hash = location.hash.substring(1);
-            if (/^[A-z0-9_-]+$/.test(hash) && (element = document.getElementById(hash))) {
-                if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
-                    element.tabIndex = -1;
-                }
-                element.focus();
-            }
-        }, false);
-    </script>
 </body>
 </html>

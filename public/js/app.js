@@ -7,15 +7,6 @@ const year = document.getElementById('year');
 const date = new Date();
 year.innerHTML = date.getFullYear();
 
-/*Btn toogle screen mobile */
-
-const hamburger = document.querySelector(".hamburger");
-
-hamburger.addEventListener("click", () => {
-  const navBar = document.querySelector(".nav-bar");
-  navBar.classList.toggle("active");
-});
-
 /* 2 btn introduction */
 const btns = document.querySelectorAll(".btn");
 
@@ -103,6 +94,9 @@ btn.addEventListener("click", () => {
  */
 const mainHead = document.querySelector('.main-head');
 
+const logo = document.querySelector('.logo');
+
+
 window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
@@ -113,7 +107,7 @@ function handleScroll() {
   }
 }
 
-mainHead.addEventListener("click", () => {
+logo.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     left: 0,
@@ -166,10 +160,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 x: 10, 
                 y: 60, 
             },
-            backgroundColor: "green", 
             style: {
               fontSize: "13px", 
               padding: "12px", 
+              background: "green",
             },
           }).showToast();
             resetForm();
@@ -183,10 +177,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 x: 10, 
                 y: 60, 
             },
-            backgroundColor: "red",
             style: {
               fontSize: "13px", 
-              padding: "12px", 
+              padding: "12px",
+              background: "red",
             },
           }).showToast();
         }
@@ -200,16 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
         Toastify({
           text: "Remplissez tous les champs !",
           duration: 3500,
-          gravity: "top", // Position verticale (top, bottom)
+          gravity: "top",     // Position verticale (top, bottom)
           position: "right", // Alignement horizontal (left, center, right)
           offset: {
-            x: 10, // Décalage en pixels depuis la bordure droite
-            y: 60, // Décalage en pixels depuis la bordure inférieure
+            x: 10,         // Décalage en pixels depuis la bordure droite
+            y: 60,        // Décalage en pixels depuis la bordure inférieure
           },
-          backgroundColor: "orange",
           style: {
-            fontSize: "13px", // Réduction de la taille du texte
-            padding: "12px", // Optionnel : ajuster le padding si nécessaire
+            fontSize: "13px",     // Réduction de la taille du texte
+            padding: "12px",     // Optionnel : ajuster le padding si nécessaire
+            background: "orange",
           },
       }).showToast();
     }
@@ -229,8 +223,8 @@ const resetForm = () => {
     // Réinitialise les messages d'erreur et de validation
     const errorDivs = document.querySelectorAll('.error');
     errorDivs.forEach(div => {
-        div.innerHTML = ''; // Efface le contenu
-        div.style.display = 'none'; // Cache le div d'erreur
+        div.innerHTML = '';            // Efface le contenu
+        div.style.display = 'none';   // Cache le div d'erreur
     });
 
     // Retire les classes d'erreur et de succès
@@ -493,7 +487,24 @@ sr.reveal('.coordinate', {
 })
 
 
-
+/********************
+ *    DARK MODE     *
+ ********************/
+let darkmode = localStorage.getItem('darkmode');
+const themSwitch = document.getElementById('theme-switch');
+const enableDarkmode = () =>{
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
+}
+const disableDarkmode = () => {
+    document.body.classList.remove('darkmode')
+    localStorage.setItem('darkmode', null)
+}
+if(darkmode === "active") enableDarkmode()
+themSwitch.addEventListener("click", () =>{
+    darkmode = localStorage.getItem('darkmode')
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+});
 
 
 //ScrollReveal().reveal('.main-head', { delay: 600, duration: 600});
