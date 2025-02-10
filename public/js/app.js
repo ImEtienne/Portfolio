@@ -100,7 +100,7 @@ const logo = document.querySelector('.logo');
 window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
-  if (window.scrollY > 100) { 
+  if (window.scrollY > 0) { 
     mainHead.classList.add('fixed-header');
   } else {
     mainHead.classList.remove('fixed-header');
