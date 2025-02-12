@@ -713,7 +713,7 @@ header.active {
   min-height: 100vh;
   color: var(--color-education-container);
   position: relative;
-  padding: 70px;
+  padding: 75px 10%;
 }
 
 /*timeline*/
@@ -1003,7 +1003,7 @@ header.active {
   min-height: 100vh;
   color: var(--color-experience-section-text);
   position: relative;
-  padding: 70px;
+  padding: 75px 10%;
 }
 
 /* timeline */
