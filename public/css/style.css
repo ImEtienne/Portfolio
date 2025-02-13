@@ -1547,6 +1547,11 @@ footer {
   margin-bottom: 10px;
 }
 
+.footer-container ul li a {
+  text-transform: capitalize;
+  color: var(--color-footer-text);
+}
+
 /**********************
 *       SCROLL btn    *
 ***********************/
