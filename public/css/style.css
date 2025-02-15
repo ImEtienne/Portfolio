@@ -576,6 +576,13 @@ header.active {
   }
 }
 
+/**********************************
+*   INITAL SECTION MARGIN TOP     *
+**********************************/
+#presentation, #education, #skill, #experience, #portfolio, #contact{
+  scroll-margin-top: 59px;
+}
+
 /* ****************************
 *      QUI SUIS-JE OR ABOUT   *
 *******************************/
