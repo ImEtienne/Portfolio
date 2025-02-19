@@ -140,73 +140,96 @@ document.addEventListener('DOMContentLoaded', function () {
       object: object.value,
       message: message.value
     }
+    
+  if (validateInput()) {
+  document.getElementById('loader').classList.remove('hidden');
+  document.getElementById('sendButton').disabled = true;
+  document.getElementById('btn-text').classList.add('hidden');
 
-    if (validateInput()) {
-      document.getElementById('loader').classList.remove('hidden');
-      document.getElementById('sendButton').disabled = true;
-      document.getElementById('btn-text').classList.add('hidden');
-      let xhr = new XMLHttpRequest();
-      xhr.open('POST', '/');
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.onload = function () {
-        console.log(xhr.responseText);
-        if (xhr.responseText.trim() === 'success') {
-          Toastify({
-            text: "Message envoyé",
-            duration: 3500, 
-            gravity: "top", 
-            position: "right", 
-            offset: {
-                x: 10, 
-                y: 60, 
-            },
-            style: {
-              fontSize: "13px", 
-              padding: "12px", 
-              background: "green",
-            },
-          }).showToast();
-            resetForm();
-        } else {
-          Toastify({
-            text: "Erreur lors de l'envoi du message",
-            duration: 3500,
-            gravity: "top",
-            position: "right",
-             offset: {
-                x: 10, 
-                y: 60, 
-            },
-            style: {
-              fontSize: "13px", 
-              padding: "12px",
-              background: "red",
-            },
-          }).showToast();
-        }
-        document.getElementById('loader').classList.add('hidden');
-        document.getElementById('sendButton').disabled = false; 
-        document.getElementById('btn-text').classList.remove('hidden');
+  // Utilisation de fetch pour envoyer la requête POST
+  fetch('/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+  .then(response => response.text())  // Récupérer la réponse en tant que texte
+  .then(responseText => {
+    console.log(responseText);
 
-      };
-      xhr.send(JSON.stringify(formData));
-      } else {
-        Toastify({
-          text: "Remplissez tous les champs !",
-          duration: 3500,
-          gravity: "top",     // Position verticale (top, bottom)
-          position: "right", // Alignement horizontal (left, center, right)
-          offset: {
-            x: 10,         // Décalage en pixels depuis la bordure droite
-            y: 60,        // Décalage en pixels depuis la bordure inférieure
-          },
-          style: {
-            fontSize: "13px",     // Réduction de la taille du texte
-            padding: "12px",     // Optionnel : ajuster le padding si nécessaire
-            background: "orange",
-          },
+    // Affichage de Toast en fonction de la réponse
+    if (responseText.trim() === 'success') {
+      Toastify({
+        text: "Message envoyé",
+        duration: 3500,
+        gravity: "top", 
+        position: "right", 
+        offset: { x: 10, y: 60 },
+        style: {
+          fontSize: "13px", 
+          padding: "12px", 
+          background: "green",
+        },
+      }).showToast();
+      resetForm();
+    } else {
+      Toastify({
+        text: "Erreur lors de l'envoi du message",
+        duration: 3500,
+        gravity: "top",
+        position: "right",
+        offset: { x: 10, y: 60 },
+        style: {
+          fontSize: "13px", 
+          padding: "12px",
+          background: "red",
+        },
       }).showToast();
     }
+
+    // Réinitialiser l'état des éléments UI
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('sendButton').disabled = false; 
+    document.getElementById('btn-text').classList.remove('hidden');
+  })
+  .catch(error => {
+    console.error('Erreur:', error);
+    Toastify({
+      text: "Une erreur s'est produite",
+      duration: 3500,
+      gravity: "top", 
+      position: "right", 
+      offset: { x: 10, y: 60 },
+      style: {
+        fontSize: "13px", 
+        padding: "12px",
+        background: "red",
+      },
+    }).showToast();
+
+    // Réinitialiser l'état des éléments UI en cas d'erreur
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('sendButton').disabled = false; 
+    document.getElementById('btn-text').classList.remove('hidden');
+  });
+} else {
+  Toastify({
+    text: "Remplissez tous les champs !",
+    duration: 3500,
+    gravity: "top",     // Position verticale (top, bottom)
+    position: "right", // Alignement horizontal (left, center, right)
+    offset: {
+      x: 10,         // Décalage en pixels depuis la bordure droite
+      y: 60,        // Décalage en pixels depuis la bordure inférieure
+    },
+    style: {
+      fontSize: "13px",     // Réduction de la taille du texte
+      padding: "12px",     // Optionnel : ajuster le padding si nécessaire
+      background: "orange",
+    },
+  }).showToast();
+}
   });
 });
 
