@@ -7,6 +7,16 @@ const year = document.getElementById('year');
 const date = new Date();
 year.innerHTML = date.getFullYear();
 
+/**
+ * menu burger
+ */
+const hamburger = document.querySelector(".hamburger");
+
+hamburger.addEventListener("click", () => {
+  const navBar = document.querySelector(".nav-bar");
+  navBar.classList.toggle("active");
+});
+
 /* 2 btn introduction */
 const btns = document.querySelectorAll(".btn");
 
