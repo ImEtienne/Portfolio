@@ -206,7 +206,7 @@ body {
   position: relative;
   overflow-x: hidden;
   flex-wrap: wrap;
-  background: red;
+  background: var(--body-bg-color);
 }
 
 header.active {
@@ -1571,7 +1571,7 @@ footer {
 }
 
 /**********************
-*       SCROLL btn    *
+*   SCROLL BTN UP     *
 ***********************/
 /*.bton {
   height: 50px;
@@ -1609,6 +1609,8 @@ footer {
 .bton.active {
   bottom: 20px;
   opacity: 1;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .icone {
@@ -1637,6 +1639,55 @@ footer {
 ::-webkit-scrollbar-track {
   background-color: var(--scrollbar-background);
   width: 50px;
+}
+
+/*****************************
+*           CHAT             *     
+******************************/
+
+/* Icône du chatbot */
+.chat-icon {
+  width: 80px; /* Réduction de la largeur */
+  height: 80px; /* Hauteur cohérente */
+  display: inline-block;
+  position: fixed; /* Positionnement fixe */
+  bottom: 25px; /* Distance du bas */
+  right: 20px; /* Décalé pour laisser de la place au bouton "scroll top" */
+  opacity: 0.9; /* Opacité entre 0 et 1 */
+  z-index: 100;
+  overflow: hidden; /* Pour masquer le pseudo-élément en dehors des limites */
+  transition: transform 0.3s ease, bottom 0.4s ease, opacity 0.4s ease;
+}
+
+/* Effet de survol : agrandissement de l'icône */
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Effet "shine" inspiré d'Apple via un pseudo-élément */
+.chat-icon::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.75s ease;
+}
+
+/* Déclenchement de l'effet "shine" au survol */
+.chat-icon:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+/* Style de l'icône SVG interne */
+.chat-icon svg {
+  fill: var(--bg-color-bg-up);
+  width: 60px;
+  height: auto;
+  position: relative;
+  z-index: 2;
 }
 
 /******************************
