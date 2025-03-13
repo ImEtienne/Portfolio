@@ -11,8 +11,12 @@
     "socket.io": "^4.8.1",
     "typed.js": "^2.1.0"
   },
+   "devDependencies": {
+    "rimraf": "^3.0.2"
+  },
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "rm -rf build && mkdir build && cp -R public build/ && cp -R views build/"
   },
   "name": "portfolio-2024",
   "version": "1.0.0",

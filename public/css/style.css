@@ -13,9 +13,7 @@
 *       Réinitialisation des bordures et du padding pour tous les éléments     *
 *******************************************************************************/
 
-*,
-*::after,
-*::before {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
