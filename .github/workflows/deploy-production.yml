@@ -1,0 +1,42 @@
+name: CI/CD pour Portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Construction du portfolio
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v3
+      
+      # Si votre projet utilise Node.js, configurez l'environnement
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+      
+      - name: Installation des dépendances
+        run: npm install --production
+
+      - name: Build du portfolio
+        run: npm run build
+
+  deploy:
+    name: Déploiement sur o2switch
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v3
+
+      - name: Déploiement via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server:  ftp.kiet8667.odns.fr  # Remplacez par l'adresse FTP de votre hébergement o2switch
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build  # Le dossier généré par la commande de build
