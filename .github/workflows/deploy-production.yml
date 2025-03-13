@@ -30,6 +30,9 @@ jobs:
       - name: 🔨 Build du portfolio
         run: npm run build --if-present
 
+      - name: Afficher le répertoire courant
+        run: pwd
+
        # Vérifier que le dossier build/ existe
       - name: Verify build folder exists
         run: |
