@@ -19,24 +19,26 @@ jobs:
         with:
           node-version: '22'
       
-      - name: Installation des dépendances
-        run: npm install --production
+      - name: 🔨 Installation des dépendances
+        run: npm install
 
-      - name: Build du portfolio
+      - name: 🔨 Build du portfolio
         run: npm run build
 
-  deploy:
-    name: Déploiement sur o2switch
+  web-deploy:
+    name: 🚀 Déploiement sur o2switch
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Récupération du code
-        uses: actions/checkout@v3
+      - name: 🚚 Récupération du code
+        uses: actions/checkout@v4
 
       - name: Déploiement via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:  ftp.kiet8667.odns.fr  # Remplacez par l'adresse FTP de votre hébergement o2switch
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
           local-dir: build  # Le dossier généré par la commande de build
