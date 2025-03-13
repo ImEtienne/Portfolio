@@ -3,3 +3,9 @@
 .metals/
 .env*
 node_modules/
+
+# Ignorer le dossier build
+build/
+
+# Ignorer les fichiers de log
+*.log

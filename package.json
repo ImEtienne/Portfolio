@@ -11,12 +11,14 @@
     "socket.io": "^4.8.1",
     "typed.js": "^2.1.0"
   },
-   "devDependencies": {
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2"
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "rm -rf build && mkdir build && cp -R public build/ && cp -R views build/"
+    "clean": "rimraf build",
+    "build": "rimraf build && mkdir build && npx copyfiles -u 1 public/**/* build/ && npx copyfiles -u 1 views/**/* build/"
   },
   "name": "portfolio-2024",
   "version": "1.0.0",
