@@ -40,13 +40,18 @@ jobs:
           node -v
           npm -v
 
+      - name: List files before FTP deployment
+        run: |
+          echo "Listing the directory structure:"
+          ls -R  # Liste récursive de tous les fichiers et répertoires
+
   deploy:
     name: 🚀 Déploiement sur o2switch
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Récupération du code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Déploiement via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -56,5 +61,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: build/  # Le dossier généré par la commande de build
+          local-dir: ./build/  # Le dossier généré par la commande de build
           server-dir: /fullstack/
