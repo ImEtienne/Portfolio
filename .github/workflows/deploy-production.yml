@@ -22,9 +22,6 @@ jobs:
       - name: 🔨 Installation des dépendances
         run: npm install
 
-      - name: 🔨 Run Script
-        run: npm run-script lint:fix
-
       - name: 🔨 Build du portfolio
         run: npm run build --if-present
 
