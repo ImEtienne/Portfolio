@@ -13,7 +13,9 @@
 *       Réinitialisation des bordures et du padding pour tous les éléments     *
 *******************************************************************************/
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,7 +30,7 @@ html {
   user-select: none;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  /*overflow: auto;*/
   scroll-behavior: smooth;
   font-size: 1rem;
 }
@@ -199,8 +201,12 @@ html {
 *          BODY                          *
 ******************************************/
 body {
-  background-color: var(--body-bg-color);
   min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  background: var(--body-bg-color);
 }
 
 header.active {
@@ -579,7 +585,12 @@ header.active {
 /**********************************
 *   INITAL SECTION MARGIN TOP     *
 **********************************/
-#presentation, #education, #skill, #experience, #portfolio, #contact{
+#presentation,
+#education,
+#skill,
+#experience,
+#portfolio,
+#contact {
   scroll-margin-top: 59px;
 }
 
@@ -1560,7 +1571,7 @@ footer {
 }
 
 /**********************
-*       SCROLL btn    *
+*   SCROLL BTN UP     *
 ***********************/
 /*.bton {
   height: 50px;
@@ -1598,6 +1609,8 @@ footer {
 .bton.active {
   bottom: 20px;
   opacity: 1;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .icone {
@@ -1628,6 +1641,55 @@ footer {
   width: 50px;
 }
 
+/*****************************
+*           CHAT             *     
+******************************/
+
+/* Icône du chatbot */
+.chat-icon {
+  width: 80px; /* Réduction de la largeur */
+  height: 80px; /* Hauteur cohérente */
+  display: inline-block;
+  position: fixed; /* Positionnement fixe */
+  bottom: 25px; /* Distance du bas */
+  right: 20px; /* Décalé pour laisser de la place au bouton "scroll top" */
+  opacity: 0.9; /* Opacité entre 0 et 1 */
+  z-index: 100;
+  overflow: hidden; /* Pour masquer le pseudo-élément en dehors des limites */
+  transition: transform 0.3s ease, bottom 0.4s ease, opacity 0.4s ease;
+}
+
+/* Effet de survol : agrandissement de l'icône */
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Effet "shine" inspiré d'Apple via un pseudo-élément */
+.chat-icon::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.75s ease;
+}
+
+/* Déclenchement de l'effet "shine" au survol */
+.chat-icon:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+/* Style de l'icône SVG interne */
+.chat-icon svg {
+  fill: var(--bg-color-bg-up);
+  width: 60px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
 /******************************
 *          ANIMATION          *                  
 *******************************/
@@ -1635,7 +1697,46 @@ footer {
 /***********************************
 *       Responsive design          *
 ************************************/
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 320px) {
+}
+
+/* width <= 480px */
+@media only screen and (max-width: 480px) {
+}
+
+/* width <= 768px */
+@media only screen and (max-width: 768px) {
+  /* Tes styles pour les écrans de moins de 768px */
+  .main-head {
+    width: 100%;
+  }
+
+  /* presentation */
+  .content-about p {
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0 8%;
+  }
+  .content-about a {
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  /* presentation img */
+  .image-about img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+  }
+}
+
+/* if width <= 990px */
+@media only screen and (max-width: 1168px) {
+  html {
+    flex-wrap: wrap;
+  }
+
   .hamburger {
     display: block;
     cursor: pointer;
@@ -1646,9 +1747,15 @@ footer {
   .hamburger .line {
     width: 30px;
     height: 3px;
-    background: black;
+    background: var(--color-primary);
     margin: 6px 0;
   }
+
+  header {
+    display: flex;
+    width: 100%;
+  }
+
   .nav-bar {
     height: 0px;
     position: absolute;
@@ -1662,20 +1769,22 @@ footer {
   }
   .main-head {
     z-index: 100;
+    position: relative;
+    width: 100%;
   }
 
   .nav-bar.active {
-    height: 550px;
+    height: 600px;
   }
 
   .nav-bar ul {
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     justify-content: center;
     transition: 0.4s;
     opacity: 0;
+    background: green;
   }
 
   .nav-bar.active ul {
@@ -1701,6 +1810,12 @@ footer {
   /* Banner right */
   .banner-right {
     display: none;
+  }
+
+  #introduction {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
   /* presentation */
