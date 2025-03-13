@@ -41,4 +41,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: build  # Le dossier généré par la commande de build
+          local-dir: build/  # Le dossier généré par la commande de build
+          remote-dir: /fullstack
