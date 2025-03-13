@@ -42,4 +42,4 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: build/  # Le dossier généré par la commande de build
-          server-dir: /fullstack
+          server-dir: /fullstack/
